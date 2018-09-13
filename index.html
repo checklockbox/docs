@@ -265,6 +265,34 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#checks" class="toc-h1 toc-link" data-title="Checks">Checks</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#the-check-object" class="toc-h2 toc-link" data-title="The check object">The check object</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-an-existing-check" class="toc-h2 toc-link" data-title="Retrieve an existing check">Retrieve an existing check</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-checks" class="toc-h2 toc-link" data-title="List all checks">List all checks</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#deposits" class="toc-h1 toc-link" data-title="Deposits">Deposits</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#the-deposit-object" class="toc-h2 toc-link" data-title="The deposit object">The deposit object</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-an-existing-deposit" class="toc-h2 toc-link" data-title="Retrieve an existing deposit">Retrieve an existing deposit</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-deposits" class="toc-h2 toc-link" data-title="List all deposits">List all deposits</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='mailto:hello@checklockbox.com'>Contact Us</a></li>
@@ -363,11 +391,15 @@ You must replace `sk_test_1234567890` with your personal API key.
 -u sk_test_1234567890:
 
 <span class="o">{</span>
-  <span class="s2">"id"</span>: <span class="s2">"check_3fj38099dalkxie"</span>,
   <span class="s2">"object"</span>: <span class="s2">"check"</span>,
+  <span class="s2">"id"</span>: <span class="s2">"chk_83ASDfhje83jdncle1284"</span>,
   <span class="s2">"amount"</span>: 19900,
-  <span class="s2">"created_at"</span>: 1426021736,
-  <span class="s2">"updated_at"</span>: 1426021736
+  <span class="s2">"number"</span>: 10012,
+  <span class="s2">"account"</span>: <span class="s2">"acct_ksdfj3409DKf93jhdk"</span>,
+  <span class="s2">"deposit"</span>: <span class="s2">"dep_s8dFJsd83jdj939384"</span>,
+  <span class="s2">"created_at"</span>: 1536231667,
+  <span class="s2">"updated_at"</span>: 1536231667,
+  <span class="s2">"created_at"</span>: <span class="s2">"1437924749"</span>
 <span class="o">}</span>
 </code></pre><h3 id='sample-arguments'>Sample Arguments</h3>
 <table><thead>
@@ -423,6 +455,210 @@ EXAMPLE RESPONSE
 <p>No Arguments</p>
 <h3 id='returns'>RETURNS</h3>
 <p>An account object for the API key used to authenticate the request.</p>
+<h1 id='checks'>Checks</h1><h2 id='the-check-object'>The check object</h2><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"object"</span>: <span class="s2">"check"</span>,
+  <span class="s2">"id"</span>: <span class="s2">"chk_83ASDfhje83jdncle1284"</span>,
+  <span class="s2">"amount"</span>: 19900,
+  <span class="s2">"number"</span>: 10012,
+  <span class="s2">"account"</span>: <span class="s2">"acct_ksdfj3409DKf93jhdk"</span>,
+  <span class="s2">"deposit"</span>: <span class="s2">"dep_s8dFJsd83jdj939384"</span>,
+  <span class="s2">"created_at"</span>: 1536231667,
+  <span class="s2">"updated_at"</span>: 1536231667
+<span class="o">}</span>
+</code></pre><h3 id='attributes'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><strong>string</strong></td>
+</tr>
+<tr>
+<td>object</td>
+<td><strong>string</strong> <em>value is &quot;check&quot;</em></td>
+</tr>
+<tr>
+<td>amount</td>
+<td><strong>integer</strong><br>Amount in cents</td>
+</tr>
+<tr>
+<td>number</td>
+<td><strong>string</strong></td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-an-existing-check'>Retrieve an existing check</h2><pre class="highlight shell tab-shell"><code>DEFINITION
+GET https://api.checklockbox.com/v1/checks/<span class="o">{</span>check_ID<span class="o">}</span>
+
+EXAMPLE REQUEST
+<span class="gp">$ </span>curl https://api.checklockbox.com/v1/checks/tr_3fj38099dalkxie <span class="se">\</span>
+    -u sk_test_nUbl45Q7BQhioCNVhSw:
+
+EXAMPLE RESPONSE
+<span class="o">{</span>
+  <span class="s2">"object"</span>: <span class="s2">"check"</span>,
+  <span class="s2">"id"</span>: <span class="s2">"chk_83ASDfhje83jdncle1284"</span>,
+  <span class="s2">"amount"</span>: 19900,
+  <span class="s2">"number"</span>: 10012,
+  <span class="s2">"account"</span>: <span class="s2">"acct_ksdfj3409DKf93jhdk"</span>,
+  <span class="s2">"deposit"</span>: <span class="s2">"dep_s8dFJsd83jdj939384"</span>,
+  <span class="s2">"created_at"</span>: 1536231667,
+  <span class="s2">"updated_at"</span>: 1536231667
+<span class="o">}</span>
+</code></pre>
+<p>Retrieves the details of a check that has previously been created. Supply a unique check ID that was returned in a previous request.</p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><strong>required</strong><br>The identifier of the check to be retrieved.</td>
+</tr>
+</tbody></table>
+<h3 id='returns'>Returns</h3>
+<p>Returns a check object if a valid identifier was provided, and returns <a href="#errors">an error</a> otherwise.</p>
+<h2 id='list-all-checks'>List all checks</h2><pre class="highlight shell tab-shell"><code>DEFINITION
+GET https://api.checklockbox.com/v1/checks
+
+EXAMPLE REQUEST
+<span class="gp">$ </span>curl https://api.checklockbox.com/v1/checks <span class="se">\</span>
+-u sk_test_nUbl45Q7BQhioCNVhSw:
+
+EXAMPLE RESPONSE
+<span class="o">{</span>
+  <span class="s2">"object"</span>: <span class="s2">"list"</span>,
+  <span class="s2">"data"</span>: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="s2">"object"</span>: <span class="s2">"check"</span>,
+      <span class="s2">"id"</span>: <span class="s2">"chk_83ASDfhje83jdncle1284"</span>,
+      <span class="s2">"amount"</span>: 19900,
+      <span class="s2">"number"</span>: 10012,
+      <span class="s2">"account"</span>: <span class="s2">"acct_ksdfj3409DKf93jhdk"</span>,
+      <span class="s2">"deposit"</span>: <span class="s2">"dep_s8dFJsd83jdj939384"</span>,
+      <span class="s2">"created_at"</span>: 1536231667,
+      <span class="s2">"updated_at"</span>: 1536231667
+    <span class="o">}</span>
+  <span class="o">]</span>
+<span class="o">}</span>
+</code></pre>
+<p>Returns a list of checks you&#39;ve previously created. The checks are returned in sorted order, with the most recent checks appearing first.  If no results are found given the arguments, an empty list should be returned.</p>
+<h3 id='arguments-2'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>created_at</td>
+<td><strong>optional</strong><br>A filter on the list based on the object <code>created_at</code> field. The value can be a string with an integer Unix timestamp, or it can be a dictionary with the following options, all of which take a string with an integer Unix timestamp:<ul><li><code>gt</code> for greater than</li><li><code>gte</code> for greater than or equal to</li><li><code>lt</code> for less than</li><li><code>lte</code> for less thank or equal to</li><br>See datetime filter examples <a href="#filter-by-created_at">here</a>.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#pagination">Pagination</a> section for supported pagination arguments.</p>
+<h1 id='deposits'>Deposits</h1><h2 id='the-deposit-object'>The deposit object</h2><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"object"</span>: <span class="s2">"deposit"</span>,
+  <span class="s2">"id"</span>: <span class="s2">"dep_s8dFJsd83jdj939384"</span>,
+  <span class="s2">"amount"</span>: 197610,
+  <span class="s2">"account"</span>: <span class="s2">"acct_ksdfj3409DKf93jhdk"</span>,
+  <span class="s2">"created_at"</span>: 1536801667,
+  <span class="s2">"updated_at"</span>: 1536801667
+<span class="o">}</span>
+</code></pre><h3 id='attributes'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><strong>string</strong></td>
+</tr>
+<tr>
+<td>object</td>
+<td><strong>string</strong> <em>value is &quot;deposit&quot;</em></td>
+</tr>
+<tr>
+<td>amount</td>
+<td><strong>integer</strong><br>Amount in cents</td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-an-existing-deposit'>Retrieve an existing deposit</h2><pre class="highlight shell tab-shell"><code>DEFINITION
+GET https://api.checklockbox.com/v1/deposits/<span class="o">{</span>deposit_ID<span class="o">}</span>
+
+EXAMPLE REQUEST
+<span class="gp">$ </span>curl https://api.checklockbox.com/v1/deposits/tr_3fj38099dalkxie <span class="se">\</span>
+    -u sk_test_nUbl45Q7BQhioCNVhSw:
+
+EXAMPLE RESPONSE
+<span class="o">{</span>
+  <span class="s2">"object"</span>: <span class="s2">"deposit"</span>,
+  <span class="s2">"id"</span>: <span class="s2">"dep_s8dFJsd83jdj939384"</span>,
+  <span class="s2">"amount"</span>: 197610,
+  <span class="s2">"account"</span>: <span class="s2">"acct_ksdfj3409DKf93jhdk"</span>,
+  <span class="s2">"created_at"</span>: 1536801667,
+  <span class="s2">"updated_at"</span>: 1536801667
+<span class="o">}</span>
+</code></pre>
+<p>Retrieves the details of a deposit that has previously been created. Supply a unique deposit ID that was returned in a previous request.</p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><strong>required</strong><br>The identifier of the deposit to be retrieved.</td>
+</tr>
+</tbody></table>
+<h3 id='returns'>Returns</h3>
+<p>Returns a deposit object if a valid identifier was provided, and returns <a href="#errors">an error</a> otherwise.</p>
+<h2 id='list-all-deposits'>List all deposits</h2><pre class="highlight shell tab-shell"><code>DEFINITION
+GET https://api.checklockbox.com/v1/deposits
+
+EXAMPLE REQUEST
+<span class="gp">$ </span>curl https://api.checklockbox.com/v1/deposits <span class="se">\</span>
+-u sk_test_nUbl45Q7BQhioCNVhSw:
+
+EXAMPLE RESPONSE
+<span class="o">{</span>
+  <span class="s2">"object"</span>: <span class="s2">"list"</span>,
+  <span class="s2">"data"</span>: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="s2">"object"</span>: <span class="s2">"deposit"</span>,
+      <span class="s2">"id"</span>: <span class="s2">"dep_s8dFJsd83jdj939384"</span>,
+      <span class="s2">"amount"</span>: 197610,
+      <span class="s2">"account"</span>: <span class="s2">"acct_ksdfj3409DKf93jhdk"</span>,
+      <span class="s2">"created_at"</span>: 1536801667,
+      <span class="s2">"updated_at"</span>: 1536801667
+    <span class="o">}</span>
+  <span class="o">]</span>
+<span class="o">}</span>
+</code></pre>
+<p>Returns a list of deposits you&#39;ve previously created. The deposits are returned in sorted order, with the most recent deposits appearing first.  If no results are found given the arguments, an empty list should be returned.</p>
+<h3 id='arguments-2'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>created_at</td>
+<td><strong>optional</strong><br>A filter on the list based on the object <code>created_at</code> field. The value can be a string with an integer Unix timestamp, or it can be a dictionary with the following options, all of which take a string with an integer Unix timestamp:<ul><li><code>gt</code> for greater than</li><li><code>gte</code> for greater than or equal to</li><li><code>lt</code> for less than</li><li><code>lte</code> for less thank or equal to</li><br>See datetime filter examples <a href="#filter-by-created_at">here</a>.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#pagination">Pagination</a> section for supported pagination arguments.</p>
 
       </div>
       <div class="dark-box">
