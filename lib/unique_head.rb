@@ -1,11 +1,13 @@
 # Unique header generation
 require 'middleman-core/renderers/redcarpet'
 require 'digest'
+
 class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
   def initialize
     super
     @head_count = {}
   end
+
   def header(text, header_level)
     friendly_text = text.gsub(/<[^>]*>/,"").parameterize
     if friendly_text.strip.length == 0
@@ -20,5 +22,44 @@ class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
       friendly_text += "-#{@head_count[friendly_text]}"
     end
     return "<h#{header_level} id='#{friendly_text}'>#{text}</h#{header_level}>"
+  end
+
+  def preprocess(full_document)
+    full_document = super(full_document) if defined?(super)
+    full_document = ERB.new(full_document).result(binding)
+    return full_document
+  end
+
+  def list_object(obj)
+    {
+      object: 'list',
+      data: [
+        obj
+      ]
+    }
+  end
+
+  def sample_check_hash
+    {
+      object: 'check',
+      id: 'chk_83ASDfhje83jdncle1284',
+      amount: 19900,
+      number: 10012,
+      account: 'acct_ksdfj3409DKf93jhdk',
+      deposit: 'dep_s8dFJsd83jdj939384',
+      created_at: 1536231667,
+      updated_at: 1536231667
+    }.stringify_keys
+  end
+
+  def sample_deposit_hash
+    {
+      object: 'deposit',
+      id: 'dep_s8dFJsd83jdj939384',
+      amount: 197610,
+      account: 'acct_ksdfj3409DKf93jhdk',
+      created_at: 1536801667,
+      updated_at: 1536801667
+    }.stringify_keys
   end
 end

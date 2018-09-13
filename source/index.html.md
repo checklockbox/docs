@@ -16,6 +16,8 @@ includes:
   - throttling
   - divider
   - account
+  - checks
+  - deposits
 
 search: true
 ---

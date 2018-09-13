@@ -10,13 +10,7 @@ $ curl https://api.checklockbox.com/v0/transactions?created_at[gt]=1437924748 \
 --globoff \
 -u sk_test_1234567890:
 
-{
-  "id": "check_3fj38099dalkxie",
-  "object": "check",
-  "amount": 19900,
-  "created_at": 1426021736,
-  "updated_at": 1426021736
-}
+<%= JSON.pretty_generate(sample_check_hash.merge(created_at: '1437924749')) %>
 ```
 
 ### Sample Arguments
