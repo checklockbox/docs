@@ -39,6 +39,26 @@ class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
     }
   end
 
+  def sample_account_hash
+    {
+      object: 'account',
+      id: 'acct_ksdfj3409DKf93jhdk',
+      business: 'bus_klsjdfDKFJsdkf2345',
+      created_at: 1536232308,
+      updated_at: 1536232308
+    }.stringify_keys
+  end
+
+  def sample_bank_hash
+    {
+      object: 'bank',
+      id: 'bank_2983y47sdfj8348d',
+      name: 'Sample Bank',
+      created_at: 1473847543,
+      updated_at: 1473847543
+    }.stringify_keys
+  end
+
   def sample_check_hash
     {
       object: 'check',
@@ -52,6 +72,17 @@ class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
     }.stringify_keys
   end
 
+  def sample_credentials_hash
+    {
+      object: 'credentials',
+      data: {
+        object: 'account',
+        id: 'acct_ksdfj3409DKf93jhdk',
+        secret_key: 'sk_1234567890'
+      }
+    }.stringify_keys
+  end
+
   def sample_deposit_hash
     {
       object: 'deposit',
@@ -60,6 +91,16 @@ class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
       account: 'acct_ksdfj3409DKf93jhdk',
       created_at: 1536801667,
       updated_at: 1536801667
+    }.stringify_keys
+  end
+
+  def sample_status_hash
+    {
+      object: 'status',
+      code: 'incomplete',
+      message: 'Missing bank account number',
+      attribute: 'bank_account.account_number',
+      data: sample_account_hash
     }.stringify_keys
   end
 end

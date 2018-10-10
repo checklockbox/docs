@@ -12,10 +12,7 @@ id | **string**
 object | **string** *value is "account"*
 
 ```shell
-{
-  "id": "acct_zuqdGPGi7Q1ZDSWAgjtJg",
-  "object": "account"
-}
+<%= JSON.pretty_generate(sample_account_hash) %>
 ```
 
 ## Retrieve account details
@@ -29,10 +26,7 @@ $ curl https://api.checklockbox.com/v0/account \
     -u sk_test_1234567890:
 
 EXAMPLE RESPONSE
-{
-  "id": "acct_nXB9sP3AbaP2SQdnMWCMw",
-  "object": "account"
-}
+<%= JSON.pretty_generate(sample_account_hash) %>
 ```
 
 Retrieves the account details based on the API key used to authenticate the request.

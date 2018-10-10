@@ -18,6 +18,10 @@ includes:
   - account
   - checks
   - deposits
+  - banks
+  - divider
+  - partners
+  - partner_accounts
 
 search: true
 ---

@@ -23,7 +23,7 @@ GET https://api.checklockbox.com/v1/checks/{check_ID}
 
 EXAMPLE REQUEST
 $ curl https://api.checklockbox.com/v1/checks/tr_3fj38099dalkxie \
-    -u sk_test_nUbl45Q7BQhioCNVhSw:
+    -u sk_test_1234567890:
 
 EXAMPLE RESPONSE
 <%= JSON.pretty_generate(sample_check_hash) %>
@@ -49,7 +49,7 @@ GET https://api.checklockbox.com/v1/checks
 
 EXAMPLE REQUEST
 $ curl https://api.checklockbox.com/v1/checks \
--u sk_test_nUbl45Q7BQhioCNVhSw:
+-u sk_test_1234567890:
 
 EXAMPLE RESPONSE
 <%= JSON.pretty_generate(list_object(sample_check_hash)) %>

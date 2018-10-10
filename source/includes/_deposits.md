@@ -22,7 +22,7 @@ GET https://api.checklockbox.com/v1/deposits/{deposit_ID}
 
 EXAMPLE REQUEST
 $ curl https://api.checklockbox.com/v1/deposits/tr_3fj38099dalkxie \
-    -u sk_test_nUbl45Q7BQhioCNVhSw:
+    -u sk_test_1234567890:
 
 EXAMPLE RESPONSE
 <%= JSON.pretty_generate(sample_deposit_hash) %>
@@ -48,7 +48,7 @@ GET https://api.checklockbox.com/v1/deposits
 
 EXAMPLE REQUEST
 $ curl https://api.checklockbox.com/v1/deposits \
--u sk_test_nUbl45Q7BQhioCNVhSw:
+-u sk_test_1234567890:
 
 EXAMPLE RESPONSE
 <%= JSON.pretty_generate(list_object(sample_deposit_hash)) %>
