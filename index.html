@@ -293,6 +293,46 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#banks" class="toc-h1 toc-link" data-title="Banks">Banks</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#the-bank-object" class="toc-h2 toc-link" data-title="The bank object">The bank object</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-an-existing-bank" class="toc-h2 toc-link" data-title="Retrieve an existing bank">Retrieve an existing bank</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-banks" class="toc-h2 toc-link" data-title="List all banks">List all banks</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#58b63e273b" class="toc-h1 toc-link" data-title="---">---</a>
+          </li>
+          <li>
+            <a href="#partners" class="toc-h1 toc-link" data-title="Partners">Partners</a>
+          </li>
+          <li>
+            <a href="#accounts" class="toc-h1 toc-link" data-title="Accounts">Accounts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#the-account-object" class="toc-h2 toc-link" data-title="The account object">The account object</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-account-details" class="toc-h2 toc-link" data-title="Retrieve account details">Retrieve account details</a>
+                  </li>
+                  <li>
+                    <a href="#create-an-account" class="toc-h2 toc-link" data-title="Create an account">Create an account</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-account-credentials" class="toc-h2 toc-link" data-title="Retrieve account credentials">Retrieve account credentials</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-account-status" class="toc-h2 toc-link" data-title="Retrieve account status">Retrieve account status</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='mailto:hello@checklockbox.com'>Contact Us</a></li>
@@ -434,8 +474,11 @@ You must replace `sk_test_1234567890` with your personal API key.
 </tr>
 </tbody></table>
 <pre class="highlight shell tab-shell"><code><span class="o">{</span>
-  <span class="s2">"id"</span>: <span class="s2">"acct_zuqdGPGi7Q1ZDSWAgjtJg"</span>,
-  <span class="s2">"object"</span>: <span class="s2">"account"</span>
+  <span class="s2">"object"</span>: <span class="s2">"account"</span>,
+  <span class="s2">"id"</span>: <span class="s2">"acct_ksdfj3409DKf93jhdk"</span>,
+  <span class="s2">"business"</span>: <span class="s2">"bus_klsjdfDKFJsdkf2345"</span>,
+  <span class="s2">"created_at"</span>: 1536232308,
+  <span class="s2">"updated_at"</span>: 1536232308
 <span class="o">}</span>
 </code></pre><h2 id='retrieve-account-details'>Retrieve account details</h2><pre class="highlight shell tab-shell"><code>DEFINITION
 GET https://api.checklockbox.com/v0/account
@@ -446,8 +489,11 @@ EXAMPLE REQUEST
 
 EXAMPLE RESPONSE
 <span class="o">{</span>
-  <span class="s2">"id"</span>: <span class="s2">"acct_nXB9sP3AbaP2SQdnMWCMw"</span>,
-  <span class="s2">"object"</span>: <span class="s2">"account"</span>
+  <span class="s2">"object"</span>: <span class="s2">"account"</span>,
+  <span class="s2">"id"</span>: <span class="s2">"acct_ksdfj3409DKf93jhdk"</span>,
+  <span class="s2">"business"</span>: <span class="s2">"bus_klsjdfDKFJsdkf2345"</span>,
+  <span class="s2">"created_at"</span>: 1536232308,
+  <span class="s2">"updated_at"</span>: 1536232308
 <span class="o">}</span>
 </code></pre>
 <p>Retrieves the account details based on the API key used to authenticate the request.</p>
@@ -494,7 +540,7 @@ GET https://api.checklockbox.com/v1/checks/<span class="o">{</span>check_ID<span
 
 EXAMPLE REQUEST
 <span class="gp">$ </span>curl https://api.checklockbox.com/v1/checks/tr_3fj38099dalkxie <span class="se">\</span>
-    -u sk_test_nUbl45Q7BQhioCNVhSw:
+    -u sk_test_1234567890:
 
 EXAMPLE RESPONSE
 <span class="o">{</span>
@@ -528,7 +574,7 @@ GET https://api.checklockbox.com/v1/checks
 
 EXAMPLE REQUEST
 <span class="gp">$ </span>curl https://api.checklockbox.com/v1/checks <span class="se">\</span>
--u sk_test_nUbl45Q7BQhioCNVhSw:
+-u sk_test_1234567890:
 
 EXAMPLE RESPONSE
 <span class="o">{</span>
@@ -595,7 +641,7 @@ GET https://api.checklockbox.com/v1/deposits/<span class="o">{</span>deposit_ID<
 
 EXAMPLE REQUEST
 <span class="gp">$ </span>curl https://api.checklockbox.com/v1/deposits/tr_3fj38099dalkxie <span class="se">\</span>
-    -u sk_test_nUbl45Q7BQhioCNVhSw:
+    -u sk_test_1234567890:
 
 EXAMPLE RESPONSE
 <span class="o">{</span>
@@ -627,7 +673,7 @@ GET https://api.checklockbox.com/v1/deposits
 
 EXAMPLE REQUEST
 <span class="gp">$ </span>curl https://api.checklockbox.com/v1/deposits <span class="se">\</span>
--u sk_test_nUbl45Q7BQhioCNVhSw:
+-u sk_test_1234567890:
 
 EXAMPLE RESPONSE
 <span class="o">{</span>
@@ -659,6 +705,236 @@ EXAMPLE RESPONSE
 </tbody></table>
 
 <p>See <a href="#pagination">Pagination</a> section for supported pagination arguments.</p>
+<h1 id='banks'>Banks</h1><h2 id='the-bank-object'>The bank object</h2><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"object"</span>: <span class="s2">"bank"</span>,
+  <span class="s2">"id"</span>: <span class="s2">"bank_2983y47sdfj8348d"</span>,
+  <span class="s2">"name"</span>: <span class="s2">"Sample Bank"</span>,
+  <span class="s2">"created_at"</span>: 1473847543,
+  <span class="s2">"updated_at"</span>: 1473847543
+<span class="o">}</span>
+</code></pre><h3 id='attributes'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><strong>string</strong></td>
+</tr>
+<tr>
+<td>object</td>
+<td><strong>string</strong> <em>value is &quot;bank&quot;</em></td>
+</tr>
+<tr>
+<td>name</td>
+<td><strong>string</strong></td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-an-existing-bank'>Retrieve an existing bank</h2><pre class="highlight shell tab-shell"><code>DEFINITION
+GET https://api.checklockbox.com/v1/banks/BANK_ID
+
+EXAMPLE REQUEST
+<span class="gp">$ </span>curl https://api.checklockbox.com/v1/banks/ <span class="se">\</span>
+    -u sk_test_1234567890:
+
+EXAMPLE RESPONSE
+<span class="o">{</span>
+  <span class="s2">"object"</span>: <span class="s2">"bank"</span>,
+  <span class="s2">"id"</span>: <span class="s2">"bank_2983y47sdfj8348d"</span>,
+  <span class="s2">"name"</span>: <span class="s2">"Sample Bank"</span>,
+  <span class="s2">"created_at"</span>: 1473847543,
+  <span class="s2">"updated_at"</span>: 1473847543
+<span class="o">}</span>
+</code></pre>
+<p>Retrieves an existing bank.</p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><strong>required</strong><br>The identifier of the bank to be retrieved.</td>
+</tr>
+</tbody></table>
+<h3 id='returns'>Returns</h3>
+<p>Returns a bank object if a valid identifier was provided, and returns <a href="#errors">an error</a> otherwise.</p>
+<h2 id='list-all-banks'>List all banks</h2><pre class="highlight shell tab-shell"><code>DEFINITION
+GET https://api.checklockbox.com/v1/banks
+
+EXAMPLE REQUEST
+<span class="gp">$ </span>curl https://api.checklockbox.com/v1/banks <span class="se">\</span>
+-u sk_test_1234567890:
+
+EXAMPLE RESPONSE
+<span class="o">{</span>
+  <span class="s2">"object"</span>: <span class="s2">"list"</span>,
+  <span class="s2">"data"</span>: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="s2">"object"</span>: <span class="s2">"bank"</span>,
+      <span class="s2">"id"</span>: <span class="s2">"bank_2983y47sdfj8348d"</span>,
+      <span class="s2">"name"</span>: <span class="s2">"Sample Bank"</span>,
+      <span class="s2">"created_at"</span>: 1473847543,
+      <span class="s2">"updated_at"</span>: 1473847543
+    <span class="o">}</span>
+  <span class="o">]</span>
+<span class="o">}</span>
+</code></pre>
+<p>Returns a list of banks.</p>
+<h1 id='58b63e273b'>---</h1><h1 id='partners'>Partners</h1>
+<p>Check Lockbox offers an API for our partners, giving them a way to create and manage accounts.  If you&#39;re interested in becoming a partner or reseller, please contact us at <a href="mailto:hello@checklockbox.com">hello@checklockbox.com</a>.</p>
+<h1 id='accounts'>Accounts</h1><h2 id='the-account-object'>The account object</h2>
+<p>You will need to use the v1 API. See <a href="#account">Account</a>.</p>
+<h2 id='retrieve-account-details'>Retrieve account details</h2>
+<p>You will need to use the v1 API. See <a href="#retrieve-account-details">Account</a>.</p>
+<h2 id='create-an-account'>Create an account</h2><pre class="highlight shell tab-shell"><code>DEFINITION
+POST https://api.checklockbox.com/reseller/accounts
+
+EXAMPLE REQUEST
+<span class="gp">$ </span>curl https://api.checklockbox.com/reseller/accounts <span class="se">\</span>
+    -u sk_test_1234567890:
+
+EXAMPLE RESPONSE
+<span class="o">{</span>
+  <span class="s2">"object"</span>: <span class="s2">"account"</span>,
+  <span class="s2">"id"</span>: <span class="s2">"acct_ksdfj3409DKf93jhdk"</span>,
+  <span class="s2">"business"</span>: <span class="s2">"bus_klsjdfDKFJsdkf2345"</span>,
+  <span class="s2">"created_at"</span>: 1536232308,
+  <span class="s2">"updated_at"</span>: 1536232308
+<span class="o">}</span>
+</code></pre>
+<p>Create an account by making a single call to the API.</p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address_city<br><em>string</em></td>
+<td><strong>required</strong><br></td>
+</tr>
+<tr>
+<td>address_line1<br><em>string</em></td>
+<td><strong>required</strong><br></td>
+</tr>
+<tr>
+<td>address_line2<br><em>string</em></td>
+<td><strong>optional</strong><br></td>
+</tr>
+<tr>
+<td>address_state<br><em>string</em></td>
+<td><strong>required</strong><br></td>
+</tr>
+<tr>
+<td>address_zip<br><em>string</em></td>
+<td><strong>required</strong><br></td>
+</tr>
+<tr>
+<td>bank_account_account_number<br><em>integer</em></td>
+<td><strong>required</strong><br></td>
+</tr>
+<tr>
+<td>bank_account_bank<br><em>string</em></td>
+<td><strong>required</strong><br>The ID of the bank to which this bank account belongs.  You can see a list of supported banks <a href="#banks">here</a>.</td>
+</tr>
+<tr>
+<td>bank_account_routing_number<br><em>integer</em></td>
+<td><strong>required</strong><br></td>
+</tr>
+<tr>
+<td>bank_account_verify<br><em>boolean</em></td>
+<td><strong>optional</strong><br>If set to true, you are acknowledging that the bank account information you provided is correct, you have followed all KYC regulations, and you have the right to share this information on behalf of the account owner.</td>
+</tr>
+<tr>
+<td>business_doing_business_as<br><em>string</em></td>
+<td><strong>optional</strong><br></td>
+</tr>
+<tr>
+<td>business_legal_name<br><em>string</em></td>
+<td><strong>required</strong><br></td>
+</tr>
+<tr>
+<td>business_phone_number<br><em>string</em></td>
+<td><strong>required</strong><br></td>
+</tr>
+</tbody></table>
+<h3 id='returns'>Returns</h3>
+<p>Returns an account object or returns <a href="#errors">an error</a>.</p>
+<h2 id='retrieve-account-credentials'>Retrieve account credentials</h2><pre class="highlight shell tab-shell"><code>DEFINITION
+POST https://api.checklockbox.com/reseller/accounts/ACCOUNT_ID/credentials
+
+EXAMPLE REQUEST
+<span class="gp">$ </span>curl https://api.checklockbox.com/reseller/accounts/ACCOUNT_ID/credentials <span class="se">\</span>
+    -u sk_test_1234567890:
+
+EXAMPLE RESPONSE
+<span class="o">{</span>
+  <span class="s2">"object"</span>: <span class="s2">"credentials"</span>,
+  <span class="s2">"data"</span>: <span class="o">{</span>
+    <span class="s2">"object"</span>: <span class="s2">"account"</span>,
+    <span class="s2">"id"</span>: <span class="s2">"acct_ksdfj3409DKf93jhdk"</span>,
+    <span class="s2">"secret_key"</span>: <span class="s2">"sk_1234567890"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+<p>Retrieve the credentials for an existing account.</p>
+<h3 id='arguments-2'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id<br><em>string</em></td>
+<td><strong>required</strong><br>ID of the account</td>
+</tr>
+</tbody></table>
+<h3 id='returns-2'>Returns</h3>
+<p>Returns a credentials object or returns <a href="#errors">an error</a>.</p>
+<h2 id='retrieve-account-status'>Retrieve account status</h2><pre class="highlight shell tab-shell"><code>DEFINITION
+POST https://api.checklockbox.com/reseller/accounts/ACCOUNT_ID/status
+
+EXAMPLE REQUEST
+<span class="gp">$ </span>curl https://api.checklockbox.com/reseller/accounts/ACCOUNT_ID/status <span class="se">\</span>
+    -u sk_test_1234567890:
+
+EXAMPLE RESPONSE
+<span class="o">{</span>
+  <span class="s2">"object"</span>: <span class="s2">"status"</span>,
+  <span class="s2">"code"</span>: <span class="s2">"incomplete"</span>,
+  <span class="s2">"message"</span>: <span class="s2">"Missing bank account number"</span>,
+  <span class="s2">"attribute"</span>: <span class="s2">"bank_account.account_number"</span>,
+  <span class="s2">"data"</span>: <span class="o">{</span>
+    <span class="s2">"object"</span>: <span class="s2">"account"</span>,
+    <span class="s2">"id"</span>: <span class="s2">"acct_ksdfj3409DKf93jhdk"</span>,
+    <span class="s2">"business"</span>: <span class="s2">"bus_klsjdfDKFJsdkf2345"</span>,
+    <span class="s2">"created_at"</span>: 1536232308,
+    <span class="s2">"updated_at"</span>: 1536232308
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+<p>To help when creating an account, we provide a status object that will help you determine what information is missing.</p>
+<h3 id='arguments-3'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id<br><em>string</em></td>
+<td><strong>required</strong><br>ID of the account</td>
+</tr>
+</tbody></table>
+<h3 id='returns-3'>Returns</h3>
+<p>Returns a status object or returns <a href="#errors">an error</a>.</p>
 
       </div>
       <div class="dark-box">
