@@ -294,6 +294,20 @@
               </ul>
           </li>
           <li>
+            <a href="#mailboxess" class="toc-h1 toc-link" data-title="Mailboxess">Mailboxess</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#the-mailbox-object" class="toc-h2 toc-link" data-title="The mailbox object">The mailbox object</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-an-existing-mailbox" class="toc-h2 toc-link" data-title="Retrieve an existing mailbox">Retrieve an existing mailbox</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-mailboxes" class="toc-h2 toc-link" data-title="List all mailboxes">List all mailboxes</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#banks" class="toc-h1 toc-link" data-title="Banks">Banks</a>
               <ul class="toc-list-h2">
                   <li>
@@ -705,6 +719,104 @@ EXAMPLE RESPONSE
 </tbody></table>
 
 <p>See <a href="#pagination">Pagination</a> section for supported pagination arguments.</p>
+<h1 id='mailboxess'>Mailboxess</h1><h2 id='the-mailbox-object'>The mailbox object</h2><pre class="highlight shell tab-shell"><code><span class="o">{</span>
+  <span class="s2">"object"</span>: <span class="s2">"mailbox"</span>,
+  <span class="s2">"id"</span>: <span class="s2">"mlbox_djkdf983jsls8xn"</span>,
+  <span class="s2">"account"</span>: <span class="s2">"acct_ksdfj3409DKf93jhdk"</span>,
+  <span class="s2">"line1"</span>: <span class="s2">"2261 Market Street"</span>,
+  <span class="s2">"line2"</span>: <span class="s2">"Suite 20000"</span>,
+  <span class="s2">"city"</span>: <span class="s2">"San Francisco"</span>,
+  <span class="s2">"state"</span>: <span class="s2">"California"</span>,
+  <span class="s2">"zip"</span>: <span class="s2">"94114"</span>,
+  <span class="s2">"suite_number"</span>: <span class="s2">"20000"</span>,
+  <span class="s2">"created_at"</span>: 1536801667,
+  <span class="s2">"updated_at"</span>: 1536801667
+<span class="o">}</span>
+</code></pre><h3 id='attributes'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><strong>string</strong></td>
+</tr>
+<tr>
+<td>object</td>
+<td><strong>string</strong> <em>value is &quot;mailbox&quot;</em></td>
+</tr>
+<tr>
+<td>amount</td>
+<td><strong>integer</strong><br>Amount in cents</td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-an-existing-mailbox'>Retrieve an existing mailbox</h2><pre class="highlight shell tab-shell"><code>DEFINITION
+GET https://api.checklockbox.com/v1/mailboxes/<span class="o">{</span>mailbox_ID<span class="o">}</span>
+
+EXAMPLE REQUEST
+<span class="gp">$ </span>curl https://api.checklockbox.com/v1/mailboxes/mlbox_djkdf983jsls8xn <span class="se">\</span>
+    -u sk_test_1234567890:
+
+EXAMPLE RESPONSE
+<span class="o">{</span>
+  <span class="s2">"object"</span>: <span class="s2">"mailbox"</span>,
+  <span class="s2">"id"</span>: <span class="s2">"mlbox_djkdf983jsls8xn"</span>,
+  <span class="s2">"account"</span>: <span class="s2">"acct_ksdfj3409DKf93jhdk"</span>,
+  <span class="s2">"line1"</span>: <span class="s2">"2261 Market Street"</span>,
+  <span class="s2">"line2"</span>: <span class="s2">"Suite 20000"</span>,
+  <span class="s2">"city"</span>: <span class="s2">"San Francisco"</span>,
+  <span class="s2">"state"</span>: <span class="s2">"California"</span>,
+  <span class="s2">"zip"</span>: <span class="s2">"94114"</span>,
+  <span class="s2">"suite_number"</span>: <span class="s2">"20000"</span>,
+  <span class="s2">"created_at"</span>: 1536801667,
+  <span class="s2">"updated_at"</span>: 1536801667
+<span class="o">}</span>
+</code></pre>
+<p>Retrieves the details of a mailbox that has previously been created. Supply a unique mailbox ID that was returned in a previous request.</p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><strong>required</strong><br>The identifier of the mailbox to be retrieved.</td>
+</tr>
+</tbody></table>
+<h3 id='returns'>Returns</h3>
+<p>Returns a mailbox object if a valid identifier was provided, and returns <a href="#errors">an error</a> otherwise.</p>
+<h2 id='list-all-mailboxes'>List all mailboxes</h2><pre class="highlight shell tab-shell"><code>DEFINITION
+GET https://api.checklockbox.com/v1/mailboxes
+
+EXAMPLE REQUEST
+<span class="gp">$ </span>curl https://api.checklockbox.com/v1/mailboxes <span class="se">\</span>
+-u sk_test_1234567890:
+
+EXAMPLE RESPONSE
+<span class="o">{</span>
+  <span class="s2">"object"</span>: <span class="s2">"list"</span>,
+  <span class="s2">"data"</span>: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="s2">"object"</span>: <span class="s2">"mailbox"</span>,
+      <span class="s2">"id"</span>: <span class="s2">"mlbox_djkdf983jsls8xn"</span>,
+      <span class="s2">"account"</span>: <span class="s2">"acct_ksdfj3409DKf93jhdk"</span>,
+      <span class="s2">"line1"</span>: <span class="s2">"2261 Market Street"</span>,
+      <span class="s2">"line2"</span>: <span class="s2">"Suite 20000"</span>,
+      <span class="s2">"city"</span>: <span class="s2">"San Francisco"</span>,
+      <span class="s2">"state"</span>: <span class="s2">"California"</span>,
+      <span class="s2">"zip"</span>: <span class="s2">"94114"</span>,
+      <span class="s2">"suite_number"</span>: <span class="s2">"20000"</span>,
+      <span class="s2">"created_at"</span>: 1536801667,
+      <span class="s2">"updated_at"</span>: 1536801667
+    <span class="o">}</span>
+  <span class="o">]</span>
+<span class="o">}</span>
+</code></pre>
+<p>Returns a list of mailboxes. If no results are found given the arguments, an empty list should be returned.</p>
 <h1 id='banks'>Banks</h1><h2 id='the-bank-object'>The bank object</h2><pre class="highlight shell tab-shell"><code><span class="o">{</span>
   <span class="s2">"object"</span>: <span class="s2">"bank"</span>,
   <span class="s2">"id"</span>: <span class="s2">"bank_2983y47sdfj8348d"</span>,
