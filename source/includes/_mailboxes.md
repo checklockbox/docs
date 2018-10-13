@@ -1,4 +1,4 @@
-# Mailboxess
+# Mailboxes
 
 ## The mailbox object
 
