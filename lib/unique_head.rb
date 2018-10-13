@@ -94,6 +94,22 @@ class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
     }.stringify_keys
   end
 
+  def sample_mailbox_hash
+    {
+      object: 'mailbox',
+      id: 'mlbox_djkdf983jsls8xn',
+      account: 'acct_ksdfj3409DKf93jhdk',
+      line1: '2261 Market Street',
+      line2: 'Suite 20000',
+      city: 'San Francisco',
+      state: 'California',
+      zip: '94114',
+      suite_number: '20000',
+      created_at: 1536801667,
+      updated_at: 1536801667
+    }.stringify_keys
+  end
+
   def sample_status_hash
     {
       object: 'status',

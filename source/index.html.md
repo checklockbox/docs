@@ -18,6 +18,7 @@ includes:
   - account
   - checks
   - deposits
+  - mailboxes
   - banks
   - divider
   - partners
