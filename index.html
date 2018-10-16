@@ -550,6 +550,10 @@ EXAMPLE RESPONSE
 <td>number</td>
 <td><strong>string</strong></td>
 </tr>
+<tr>
+<td>scan_url</td>
+<td><strong>string</strong><br>The url of the check scan image.  This could be empty if a check was manually entered with no image attached.</td>
+</tr>
 </tbody></table>
 <h2 id='retrieve-an-existing-check'>Retrieve an existing check</h2><pre class="highlight shell tab-shell"><code>DEFINITION
 GET https://api.checklockbox.com/v1/checks/<span class="o">{</span>check_ID<span class="o">}</span>
