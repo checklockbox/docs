@@ -67,6 +67,7 @@ class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
       number: 10012,
       account: 'acct_ksdfj3409DKf93jhdk',
       deposit: 'dep_s8dFJsd83jdj939384',
+      scan_url: 'https://files.checklockbox.com/asdflasdflkjasdflkjasfd/scan.png',
       created_at: 1536231667,
       updated_at: 1536231667
     }.stringify_keys
