@@ -14,6 +14,7 @@ id | **string**
 object | **string** *value is "check"*
 amount | **integer**<br>Amount in cents
 number | **string**
+scan_url | **string**<br>The url of the check scan image.  This could be empty if a check was manually entered with no image attached.
 
 ## Retrieve an existing check
 
